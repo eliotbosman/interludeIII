@@ -75,7 +75,7 @@ body {
     grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 2vw;
     padding-right: 2vw; padding-left: 2vw;
-    height: 35vw;
+    height: 25vw;
     width: 96vw;
     overflow: hidden;
     font-size: 10pt;
@@ -106,13 +106,25 @@ small {
 .p-left {
     height: 100vh;
     overflow: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: mandatory;
+    overflow-x: hidden;
+    width: 50vw;
 
 }
 
+blockquote {
+    font-family: 'Floridian Script Std';
+    font-size: 26pt;
+}
+
 .p-img {
+    display: block;
     background: black;
-    max-width: 50vw; max-height: 100vh;
-    margin-bottom: 10vh;    
+    max-width: 100vw; max-height: 100vh;
+    min-width: 50vw; min-height: 150%;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 .p-right {
@@ -150,11 +162,12 @@ ol {
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     cursor: pointer;
+    scroll-behavior: smooth;
   }
   
   .gallery img {
     flex-shrink: 0;
-    width: 80%;
+    width: 100%;
     height: auto;
     scroll-snap-align: start;
   }
@@ -179,13 +192,31 @@ ul {
 /* *//* *//* *//* *//* *//* *//* *//* *//* *//* *//* *//* *//* *//* *//* *//* *//* *//* */
 /* *//* *//* *//* *//* *//* *//* *//* *//* *//* *//* *//* *//* *//* *//* *//* *//* *//* *//* *//* */
 
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 375px) {
+    .gallery img {
+        margin-top: 18vh;
+        width: 69vh;
+        margin-bottom: 34vh;
+        max-height: 100%;
+        transform: rotate(90deg);
+      }
+
+    .container {
+        height: 71vh;
+    }
+
+
+}
+
+@media screen and (max-width: 600px) and (min-width: 376px) {
 
     .body {
         overflow-x: hidden;
     }
     .container {
-        height: 57.5vh;
+        height: 75vh;
+        overflow: hidden;
+        margin-bottom: 2vh;
     }
 
     .p-ul {
@@ -219,19 +250,25 @@ ul {
         overflow-x: hidden;
         padding: 0;
         text-indent: 0;
+        max-width: 90vw;
+    }
+
+    .gallery {
+        width: auto;
     }
 
     .gallery img {
-        flex-shrink: 0;
-        width: 300vw;
-        max-height: 150vh;
-        scroll-snap-align: start;
+        margin-top: 18vh;
+        width: 78vh;
+        margin-bottom: 34vh;
+        max-height: 100%;
+        transform: rotate(90deg);
       }
     
     .feature {
         grid-template-columns: 1fr;
         width: 94vw;
-        height: 100vh;
+        height: 80vh;
     }
     
     .project {
